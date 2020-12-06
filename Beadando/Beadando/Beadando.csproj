@@ -80,5 +80,8 @@
     <Content Include="PATTERN.txt" />
     <Content Include="README.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

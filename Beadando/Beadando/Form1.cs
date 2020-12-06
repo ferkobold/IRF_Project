@@ -21,6 +21,8 @@ namespace Beadando
         public Form1()
         {
             InitializeComponent();
+            Expenses = GetExpenses(@"C:\temp\Expenses.csv");
+            Incomes = GetIncomes(@"C:\temp\Incomes.csv");
         }
 
         public List<Expense> GetExpenses(string csvpath)

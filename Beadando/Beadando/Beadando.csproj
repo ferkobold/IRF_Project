@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Expense.cs" />
     <Compile Include="Entities\Expensetype.cs" />
+    <Compile Include="Entities\Income.cs" />
     <Compile Include="Entities\Incometype.cs" />
     <Compile Include="Entities\Month.cs" />
     <Compile Include="Form1.cs">

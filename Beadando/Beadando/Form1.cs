@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using Beadando.Entities;
 
 namespace Beadando
@@ -18,11 +19,19 @@ namespace Beadando
         List<Income> Incomes = new List<Income>();
         //Ezekben a listákban fogjuk eltárolni a beolvasandó adatokat.
         //Az első listában a kiadásokat, a második listában a bevételeket tároljuk.
+        
         public Form1()
         {
             InitializeComponent();
             Expenses = GetExpenses(@"C:\temp\Expenses.csv");
             Incomes = GetIncomes(@"C:\temp\Incomes.csv");
+
+            /*chart1.DataSource = Incomes;
+
+            var series = chart1.Series[0];
+            series.ChartType = SeriesChartType.Line;
+            series.XValueMember = "Month";
+            series.YValueMembers = "Value";*/
         }
 
         public List<Expense> GetExpenses(string csvpath)

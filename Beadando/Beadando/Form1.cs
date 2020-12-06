@@ -42,5 +42,25 @@ namespace Beadando
             }
             return expenses;
         }
+
+        public List<Income> GetIncomes(string csvpath)
+        {
+            List<Income> incomes = new List<Income>();
+
+            using (StreamReader sr = new StreamReader(csvpath, Encoding.Default))
+            {
+                while(!sr.EndOfStream)
+                {
+                    var line = sr.ReadLine().Split(';');
+                    incomes.Add(new Income()
+                    {
+                        Month = (Month)Enum.Parse(typeof(Month), line[0]),
+                        Incometype = (Incometype)Enum.Parse(typeof(Incometype), line[1]),
+                        Value = int.Parse(line[2])
+                    });
+                }
+            }
+            return incomes;
+        }
     }
 }

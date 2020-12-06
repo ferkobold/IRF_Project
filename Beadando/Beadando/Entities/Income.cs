@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Beadando.Entities
 {
-    class Income
+    public class Income
     {
         public Month Month { get; set; }
         public Incometype Incometype { get; set; }

@@ -1,1 +1,1 @@
-asdasdasdasd
+A program fõ célja az, hogy az adott csv fájlok megfelelõ kitöltésével: Incomes.csv és Expenses.csv az adott vállalkozó, cég kimutatásokat tudjon készíteni a bevételeirõl, kiadásairól. 

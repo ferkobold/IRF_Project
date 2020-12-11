@@ -58,6 +58,12 @@
     <Compile Include="FinancialStatement.Designer.cs">
       <DependentUpon>FinancialStatement.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeScreen.Designer.cs">
+      <DependentUpon>HomeScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListView.cs">
       <SubType>Form</SubType>
     </Compile>

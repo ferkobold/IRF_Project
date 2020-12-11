@@ -26,12 +26,12 @@ namespace Beadando
             Expenses = GetExpenses(@"C:\temp\Expenses.csv");
             Incomes = GetIncomes(@"C:\temp\Incomes.csv");
 
-            /*chart1.DataSource = Incomes;
+            chart1.DataSource = Incomes;
 
             var series = chart1.Series[0];
             series.ChartType = SeriesChartType.Line;
-            series.XValueMember = "Month";
-            series.YValueMembers = "Value";*/
+            series.XValueMember = "MonthString";
+            series.YValueMembers = "Value";
         }
 
         public List<Expense> GetExpenses(string csvpath)

@@ -86,5 +86,35 @@ namespace Beadando
                 bmp.Save(@"c:\temp\screenshot.png");
             }
         }
+
+        private void ButtonBar_Click(object sender, EventArgs e)
+        {
+            var series = chart1.Series[0];
+            series.ChartType = SeriesChartType.Bar;
+            series.XValueMember = "MonthString";
+            series.YValueMembers = "Value";
+        }
+
+        private void ButtonLine_Click(object sender, EventArgs e)
+        {
+            var series = chart1.Series[0];
+            series.ChartType = SeriesChartType.Line;
+            series.XValueMember = "MonthString";
+            series.YValueMembers = "Value";
+        }
+
+        private void ButtonPie_Click(object sender, EventArgs e)
+        {
+            var series = chart1.Series[0];
+            series.ChartType = SeriesChartType.Doughnut;
+            series.XValueMember = "MonthString";
+            series.YValueMembers = "Value";
+        }
+
+        private void ButtonColor_Click(object sender, EventArgs e)
+        {
+            //kell csinálni egy változót, ami eltárolja a színt és a többinek
+            //meg kell adni ezt a változót a szín propertynek
+        }
     }
 }

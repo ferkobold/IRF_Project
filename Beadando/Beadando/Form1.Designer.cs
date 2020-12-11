@@ -28,14 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.buttonBar = new System.Windows.Forms.Button();
-            this.buttonLine = new System.Windows.Forms.Button();
-            this.buttonPie = new System.Windows.Forms.Button();
-            this.buttonColor = new System.Windows.Forms.Button();
             this.buttonList = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonChoose = new System.Windows.Forms.Button();
@@ -43,74 +39,43 @@
             this.label2 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.buttonColor = new System.Windows.Forms.Button();
+            this.buttonPie = new System.Windows.Forms.Button();
+            this.buttonLine = new System.Windows.Forms.Button();
+            this.buttonBar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(280, 12);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(390, 426);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
-            // buttonBar
-            // 
-            this.buttonBar.Location = new System.Drawing.Point(679, 37);
-            this.buttonBar.Name = "buttonBar";
-            this.buttonBar.Size = new System.Drawing.Size(124, 58);
-            this.buttonBar.TabIndex = 1;
-            this.buttonBar.Text = "Bar chart";
-            this.buttonBar.UseVisualStyleBackColor = true;
-            // 
-            // buttonLine
-            // 
-            this.buttonLine.Location = new System.Drawing.Point(679, 117);
-            this.buttonLine.Name = "buttonLine";
-            this.buttonLine.Size = new System.Drawing.Size(124, 58);
-            this.buttonLine.TabIndex = 2;
-            this.buttonLine.Text = "Line chart";
-            this.buttonLine.UseVisualStyleBackColor = true;
-            // 
-            // buttonPie
-            // 
-            this.buttonPie.Location = new System.Drawing.Point(679, 197);
-            this.buttonPie.Name = "buttonPie";
-            this.buttonPie.Size = new System.Drawing.Size(124, 58);
-            this.buttonPie.TabIndex = 3;
-            this.buttonPie.Text = "Pie chart";
-            this.buttonPie.UseVisualStyleBackColor = true;
-            // 
-            // buttonColor
-            // 
-            this.buttonColor.Location = new System.Drawing.Point(679, 277);
-            this.buttonColor.Name = "buttonColor";
-            this.buttonColor.Size = new System.Drawing.Size(124, 58);
-            this.buttonColor.TabIndex = 4;
-            this.buttonColor.Text = "Color picker";
-            this.buttonColor.UseVisualStyleBackColor = true;
-            // 
             // buttonList
             // 
-            this.buttonList.Location = new System.Drawing.Point(679, 380);
+            this.buttonList.BackgroundImage = global::Beadando.Properties.Resources.ListViewGood;
+            this.buttonList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonList.Location = new System.Drawing.Point(709, 376);
             this.buttonList.Name = "buttonList";
-            this.buttonList.Size = new System.Drawing.Size(124, 58);
+            this.buttonList.Size = new System.Drawing.Size(62, 62);
             this.buttonList.TabIndex = 5;
-            this.buttonList.Text = "List view";
             this.buttonList.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(676, 12);
+            this.label1.Location = new System.Drawing.Point(692, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 6;
@@ -159,6 +124,46 @@
             this.label3.Size = new System.Drawing.Size(183, 13);
             this.label3.TabIndex = 11;
             this.label3.Text = "Which months would you like to see?";
+            // 
+            // buttonColor
+            // 
+            this.buttonColor.BackgroundImage = global::Beadando.Properties.Resources.ColorPickerGood;
+            this.buttonColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonColor.Location = new System.Drawing.Point(709, 273);
+            this.buttonColor.Name = "buttonColor";
+            this.buttonColor.Size = new System.Drawing.Size(62, 62);
+            this.buttonColor.TabIndex = 4;
+            this.buttonColor.UseVisualStyleBackColor = true;
+            // 
+            // buttonPie
+            // 
+            this.buttonPie.BackgroundImage = global::Beadando.Properties.Resources.PieChartGood;
+            this.buttonPie.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonPie.Location = new System.Drawing.Point(709, 194);
+            this.buttonPie.Name = "buttonPie";
+            this.buttonPie.Size = new System.Drawing.Size(62, 62);
+            this.buttonPie.TabIndex = 3;
+            this.buttonPie.UseVisualStyleBackColor = true;
+            // 
+            // buttonLine
+            // 
+            this.buttonLine.BackgroundImage = global::Beadando.Properties.Resources.LineChartGood;
+            this.buttonLine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonLine.Location = new System.Drawing.Point(709, 115);
+            this.buttonLine.Name = "buttonLine";
+            this.buttonLine.Size = new System.Drawing.Size(62, 62);
+            this.buttonLine.TabIndex = 2;
+            this.buttonLine.UseVisualStyleBackColor = true;
+            // 
+            // buttonBar
+            // 
+            this.buttonBar.BackgroundImage = global::Beadando.Properties.Resources.BarChartGood;
+            this.buttonBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonBar.Location = new System.Drawing.Point(709, 36);
+            this.buttonBar.Name = "buttonBar";
+            this.buttonBar.Size = new System.Drawing.Size(62, 62);
+            this.buttonBar.TabIndex = 1;
+            this.buttonBar.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

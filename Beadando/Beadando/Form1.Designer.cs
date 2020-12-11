@@ -32,13 +32,13 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.buttonList = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonChoose = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.buttonList = new System.Windows.Forms.Button();
             this.buttonColor = new System.Windows.Forms.Button();
             this.buttonPie = new System.Windows.Forms.Button();
             this.buttonLine = new System.Windows.Forms.Button();
@@ -61,16 +61,6 @@
             this.chart1.Size = new System.Drawing.Size(390, 426);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
-            // 
-            // buttonList
-            // 
-            this.buttonList.BackgroundImage = global::Beadando.Properties.Resources.ListViewGood;
-            this.buttonList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonList.Location = new System.Drawing.Point(709, 376);
-            this.buttonList.Name = "buttonList";
-            this.buttonList.Size = new System.Drawing.Size(62, 62);
-            this.buttonList.TabIndex = 5;
-            this.buttonList.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -98,6 +88,7 @@
             this.buttonSave.TabIndex = 8;
             this.buttonSave.Text = "Save the graph";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // label2
             // 
@@ -124,6 +115,16 @@
             this.label3.Size = new System.Drawing.Size(183, 13);
             this.label3.TabIndex = 11;
             this.label3.Text = "Which months would you like to see?";
+            // 
+            // buttonList
+            // 
+            this.buttonList.BackgroundImage = global::Beadando.Properties.Resources.ListViewGood;
+            this.buttonList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonList.Location = new System.Drawing.Point(709, 376);
+            this.buttonList.Name = "buttonList";
+            this.buttonList.Size = new System.Drawing.Size(62, 62);
+            this.buttonList.TabIndex = 5;
+            this.buttonList.UseVisualStyleBackColor = true;
             // 
             // buttonColor
             // 

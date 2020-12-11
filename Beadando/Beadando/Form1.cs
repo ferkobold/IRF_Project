@@ -32,6 +32,9 @@ namespace Beadando
             series.ChartType = SeriesChartType.Line;
             series.XValueMember = "MonthString";
             series.YValueMembers = "Value";
+            /*Itt majd kell egy linQ lekérdezés, amiben összeadom
+            a hónap összes kiadását, bevételét, és annak az értékét 
+            jelenítem meg a grafikonon.*/
         }
 
         public List<Expense> GetExpenses(string csvpath)

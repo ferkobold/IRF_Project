@@ -37,6 +37,9 @@ namespace Beadando
             jelenítem meg a grafikonon.*/
         }
 
+
+
+        //---CREATING INCOME/EXPENSE LISTS---//
         public List<Expense> GetExpenses(string csvpath)
         {
             List<Expense> expenses = new List<Expense>();
@@ -77,6 +80,10 @@ namespace Beadando
             return incomes;
         }
 
+
+
+
+        //---UTILITIES ON LEFT SIDE---//
         private void ButtonSave_Click(object sender, EventArgs e)
         {
             var frm = Form.ActiveForm;
@@ -87,6 +94,9 @@ namespace Beadando
             }
         }
 
+
+
+        //---CUSTOMIZATION BUTTONS---//
         private void ButtonBar_Click(object sender, EventArgs e)
         {
             var series = chart1.Series[0];

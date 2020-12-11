@@ -126,5 +126,11 @@ namespace Beadando
             //kell csinálni egy változót, ami eltárolja a színt és a többinek
             //meg kell adni ezt a változót a szín propertynek
         }
+
+        private void ButtonList_Click(object sender, EventArgs e)
+        {
+            ListView listView = new ListView();
+            listView.ShowDialog();
+        }
     }
 }

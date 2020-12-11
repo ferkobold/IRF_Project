@@ -13,14 +13,14 @@ using Beadando.Entities;
 
 namespace Beadando
 {
-    public partial class Form1 : Form
+    public partial class FinancialStatement : Form
     {
         List<Expense> Expenses = new List<Expense>();
         List<Income> Incomes = new List<Income>();
         //Ezekben a listákban fogjuk eltárolni a beolvasandó adatokat.
         //Az első listában a kiadásokat, a második listában a bevételeket tároljuk.
         
-        public Form1()
+        public FinancialStatement()
         {
             InitializeComponent();
             Expenses = GetExpenses(@"C:\temp\Expenses.csv");

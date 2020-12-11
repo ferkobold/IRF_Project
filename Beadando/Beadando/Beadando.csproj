@@ -58,6 +58,12 @@
     <Compile Include="FinancialStatement.Designer.cs">
       <DependentUpon>FinancialStatement.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListView.Designer.cs">
+      <DependentUpon>ListView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FinancialStatement.resx">

@@ -18,9 +18,14 @@ namespace Beadando
         List<Income> Incomes = new List<Income>();
         string path = "C:\\temp\\";
         string filename = "2020";
+
+        DirectoryInfo d = new DirectoryInfo(@"C:\temp\Incomes");
+        FileInfo[] Files = d.GetFiles("*.csv");
         public ListView()
         {
             InitializeComponent();
+            comboBox1.DataSource = Files;
+            comboBox1.DisplayMember = "Name";
             Expenses = GetExpenses();
             Incomes = GetIncomes(@"C:\temp\Incomes.csv");
         }
@@ -79,7 +84,8 @@ namespace Beadando
             {
                 path = "C:\\temp\\Expenses\\";
             }
-            filename = textBox1.Text + ".csv";
+
+            filename = comboBox1.Text;
         }
     }
 }

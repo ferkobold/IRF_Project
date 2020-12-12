@@ -11,5 +11,19 @@ namespace Beadando.Entities
         public Month Month { get; set; }
         public Expensetype Expensetype { get; set; }
         public int Value { get; set; }
+        public string MonthString
+        {
+            get
+            {
+                return Month.ToString();
+            }
+        }
+        public int MonthOrder
+        {
+            get
+            {
+                return (int)Month;
+            }
+        }
     }
 }

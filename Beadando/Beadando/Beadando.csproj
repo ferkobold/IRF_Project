@@ -75,6 +75,9 @@
     <EmbeddedResource Include="FinancialStatement.resx">
       <DependentUpon>FinancialStatement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListView.resx">
+      <DependentUpon>ListView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

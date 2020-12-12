@@ -16,19 +16,16 @@ namespace Beadando
     {
         List<Expense> Expenses = new List<Expense>();
         List<Income> Incomes = new List<Income>();
-        string path = "C:\\temp\\";
-        string filename = "2020";
-
+        string path = (@"C:\temp\Incomes\");
+        string filename = "2019.csv";
+        //vagy úgy tudok \-t írni egy stringbe, ha duplán írom: \\, vagy pedig
+        //úgy, ha már az elejére a stringnek odaírok egy @-ot. What a pleasant surprise.
         
         public ListView()
         {
             InitializeComponent();
-            DirectoryInfo d = new DirectoryInfo(@"C:\temp\Incomes");
-            FileInfo[] Files = d.GetFiles("*.csv");
-            comboBox1.DataSource = Files;
-            comboBox1.DisplayMember = "Name";
-            Expenses = GetExpenses(@"C:\temp\Expenses.csv");
-            Incomes = GetIncomes(@"C:\temp\Incomes.csv");
+            Expenses = GetExpenses(path + filename);
+            Incomes = GetIncomes(path + filename);
         }
 
 
@@ -78,22 +75,39 @@ namespace Beadando
             /*Ez a kód itt beállítja a fájlnevet .csv befejezéssel, hogy ki tudja olvasni a GetIncome, Expense függvény*/
             if (radioIncomes.Checked)
             {
-                //path = "C:\\temp\\Incomes\\";
-                DirectoryInfo d = new DirectoryInfo(@"C:\temp\Incomes");
-                FileInfo[] Files = d.GetFiles("*.csv");
-                comboBox1.DataSource = Files;
-                comboBox1.DisplayMember = "Name";
+                Incomes = GetIncomes(path + filename);
+                dataGridView1.DataSource = Incomes;
             }
 
             if (radioExpenses.Checked)
             {
-                //path = "C:\\temp\\Expenses\\";
-                DirectoryInfo d = new DirectoryInfo(@"C:\temp\Expenses");
-                FileInfo[] Files = d.GetFiles("*.csv");
-                comboBox1.DataSource = Files;
-                comboBox1.DisplayMember = "Name";
+                Expenses = GetExpenses(path + filename);
+                dataGridView1.DataSource = Expenses;
             }
+        }
 
+        private void RadioIncomes_CheckedChanged(object sender, EventArgs e)
+        {
+            //path = "C:\\temp\\Incomes\\";
+            DirectoryInfo d = new DirectoryInfo(@"C:\temp\Incomes");
+            FileInfo[] Files = d.GetFiles("*.csv");
+            comboBox1.DataSource = Files;
+            comboBox1.DisplayMember = "Name";
+            path = (@"C:\temp\Incomes\");
+        }
+
+        private void RadioExpenses_CheckedChanged(object sender, EventArgs e)
+        {
+            //path = "C:\\temp\\Expenses\\";
+            DirectoryInfo d = new DirectoryInfo(@"C:\temp\Expenses");
+            FileInfo[] Files = d.GetFiles("*.csv");
+            comboBox1.DataSource = Files;
+            comboBox1.DisplayMember = "Name";
+            path = (@"C:\temp\Expenses\");
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
             filename = comboBox1.Text;
         }
     }

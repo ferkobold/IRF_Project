@@ -64,6 +64,7 @@
             this.radioIncomes.TabStop = true;
             this.radioIncomes.Text = "Incomes";
             this.radioIncomes.UseVisualStyleBackColor = true;
+            this.radioIncomes.CheckedChanged += new System.EventHandler(this.RadioIncomes_CheckedChanged);
             // 
             // radioExpenses
             // 
@@ -75,6 +76,7 @@
             this.radioExpenses.TabStop = true;
             this.radioExpenses.Text = "Expenses";
             this.radioExpenses.UseVisualStyleBackColor = true;
+            this.radioExpenses.CheckedChanged += new System.EventHandler(this.RadioExpenses_CheckedChanged);
             // 
             // comboBox1
             // 
@@ -83,6 +85,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(142, 21);
             this.comboBox1.TabIndex = 7;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // ListView
             // 

@@ -19,14 +19,15 @@ namespace Beadando
         string path = "C:\\temp\\";
         string filename = "2020";
 
-        DirectoryInfo d = new DirectoryInfo(@"C:\temp\Incomes");
-        FileInfo[] Files = d.GetFiles("*.csv");
+        
         public ListView()
         {
             InitializeComponent();
+            /*DirectoryInfo d = new DirectoryInfo(@"C:\temp\Incomes");
+            FileInfo[] Files = d.GetFiles("*.csv");
             comboBox1.DataSource = Files;
-            comboBox1.DisplayMember = "Name";
-            Expenses = GetExpenses();
+            comboBox1.DisplayMember = "Name";*/
+            Expenses = GetExpenses(@"C:\temp\Expenses.csv");
             Incomes = GetIncomes(@"C:\temp\Incomes.csv");
         }
 
@@ -77,12 +78,20 @@ namespace Beadando
             /*Ez a kód itt beállítja a fájlnevet .csv befejezéssel, hogy ki tudja olvasni a GetIncome, Expense függvény*/
             if (radioIncomes.Checked)
             {
-                path = "C:\\temp\\Incomes\\";
+                //path = "C:\\temp\\Incomes\\";
+                DirectoryInfo d = new DirectoryInfo(@"C:\temp\Incomes");
+                FileInfo[] Files = d.GetFiles("*.csv");
+                comboBox1.DataSource = Files;
+                comboBox1.DisplayMember = "Name";
             }
 
             if (radioExpenses.Checked)
             {
-                path = "C:\\temp\\Expenses\\";
+                //path = "C:\\temp\\Expenses\\";
+                DirectoryInfo d = new DirectoryInfo(@"C:\temp\Expenses");
+                FileInfo[] Files = d.GetFiles("*.csv");
+                comboBox1.DataSource = Files;
+                comboBox1.DisplayMember = "Name";
             }
 
             filename = comboBox1.Text;

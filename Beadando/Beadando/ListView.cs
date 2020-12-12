@@ -16,10 +16,8 @@ namespace Beadando
     {
         List<Expense> Expenses = new List<Expense>();
         List<Income> Incomes = new List<Income>();
-        string path = (@"C:\temp\Incomes\");
-        string filename = "2019.csv";
-        //vagy úgy tudok \-t írni egy stringbe, ha duplán írom: \\, vagy pedig
-        //úgy, ha már az elejére a stringnek odaírok egy @-ot. What a pleasant surprise.
+        public string path = (@"C:\temp\Incomes\");
+        public string filename = "2019.csv";
         
         public ListView()
         {
@@ -70,9 +68,11 @@ namespace Beadando
             return incomes;
         }
 
+
+
+        //---SETTING THE DATASOURCE OF THE DATAGRIDVIEW---//
         private void ButtonYearSelect_Click(object sender, EventArgs e)
         {
-            /*Ez a kód itt beállítja a fájlnevet .csv befejezéssel, hogy ki tudja olvasni a GetIncome, Expense függvény*/
             if (radioIncomes.Checked)
             {
                 Incomes = GetIncomes(path + filename);
@@ -88,7 +88,6 @@ namespace Beadando
 
         private void RadioIncomes_CheckedChanged(object sender, EventArgs e)
         {
-            //path = "C:\\temp\\Incomes\\";
             DirectoryInfo d = new DirectoryInfo(@"C:\temp\Incomes");
             FileInfo[] Files = d.GetFiles("*.csv");
             comboBox1.DataSource = Files;
@@ -98,7 +97,6 @@ namespace Beadando
 
         private void RadioExpenses_CheckedChanged(object sender, EventArgs e)
         {
-            //path = "C:\\temp\\Expenses\\";
             DirectoryInfo d = new DirectoryInfo(@"C:\temp\Expenses");
             FileInfo[] Files = d.GetFiles("*.csv");
             comboBox1.DataSource = Files;

@@ -23,10 +23,10 @@ namespace Beadando
         public ListView()
         {
             InitializeComponent();
-            /*DirectoryInfo d = new DirectoryInfo(@"C:\temp\Incomes");
+            DirectoryInfo d = new DirectoryInfo(@"C:\temp\Incomes");
             FileInfo[] Files = d.GetFiles("*.csv");
             comboBox1.DataSource = Files;
-            comboBox1.DisplayMember = "Name";*/
+            comboBox1.DisplayMember = "Name";
             Expenses = GetExpenses(@"C:\temp\Expenses.csv");
             Incomes = GetIncomes(@"C:\temp\Incomes.csv");
         }

@@ -17,24 +17,14 @@ namespace Beadando
     {
         List<Expense> Expenses = new List<Expense>();
         List<Income> Incomes = new List<Income>();
-        //Ezekben a listákban fogjuk eltárolni a beolvasandó adatokat.
-        //Az első listában a kiadásokat, a második listában a bevételeket tároljuk.
-        
+        public string path = (@"C:\temp\Incomes\");
+        public string filename = "2019.csv";
+
         public FinancialStatement()
         {
             InitializeComponent();
-            Expenses = GetExpenses(@"C:\temp\Expenses.csv");
-            Incomes = GetIncomes(@"C:\temp\Incomes.csv");
-
-            chart1.DataSource = Incomes;
-
-            var series = chart1.Series[0];
-            series.ChartType = SeriesChartType.Line;
-            series.XValueMember = "MonthString";
-            series.YValueMembers = "Value";
-            /*Itt majd kell egy linQ lekérdezés, amiben összeadom
-            a hónap összes kiadását, bevételét, és annak az értékét 
-            jelenítem meg a grafikonon.*/
+            Expenses = GetExpenses(path + filename);
+            Incomes = GetIncomes(path + filename);
         }
 
 
@@ -97,6 +87,8 @@ namespace Beadando
 
 
         //---CUSTOMIZATION BUTTONS---//
+        /*El kell majd tárolni egy változóban kb mindent, ami a charttal kapcsolatos, a színt is
+         meg a typeot is, csak a közöseket szabad bennehagyni a közösben.*/
         private void ButtonBar_Click(object sender, EventArgs e)
         {
             var series = chart1.Series[0];
@@ -131,6 +123,58 @@ namespace Beadando
         {
             ListView listView = new ListView();
             listView.ShowDialog();
+        }
+
+
+
+        //---INTERACTIVE GRAPH---//
+        /*Itt majd kell egy linQ lekérdezés, amiben összeadom
+            a hónap összes kiadását, bevételét, és annak az értékét 
+            jelenítem meg a grafikonon.*/
+        private void RadioIncomes_CheckedChanged(object sender, EventArgs e)
+        {
+            DirectoryInfo d = new DirectoryInfo(@"C:\temp\Incomes");
+            FileInfo[] Files = d.GetFiles("*.csv");
+            comboBox1.DataSource = Files;
+            comboBox1.DisplayMember = "Name";
+            path = (@"C:\temp\Incomes\");
+        }
+
+        private void RadioExpenses_CheckedChanged(object sender, EventArgs e)
+        {
+            DirectoryInfo d = new DirectoryInfo(@"C:\temp\Expenses");
+            FileInfo[] Files = d.GetFiles("*.csv");
+            comboBox1.DataSource = Files;
+            comboBox1.DisplayMember = "Name";
+            path = (@"C:\temp\Expenses\");
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filename = comboBox1.Text;
+        }
+
+        private void ButtonYearSelect_Click(object sender, EventArgs e)
+        {
+            if (radioIncomes.Checked)
+            {
+                Incomes = GetIncomes(path + filename);
+                chart1.DataSource = Incomes;
+                var series = chart1.Series[0];
+                series.ChartType = SeriesChartType.Line;
+                series.XValueMember = "MonthString";
+                series.YValueMembers = "Value";
+            }
+
+            if (radioExpenses.Checked)
+            {
+                Expenses = GetExpenses(path + filename);
+                chart1.DataSource = Expenses;
+                var series = chart1.Series[0];
+                series.ChartType = SeriesChartType.Line;
+                series.XValueMember = "MonthString";
+                series.YValueMembers = "Value";
+            }
         }
     }
 }

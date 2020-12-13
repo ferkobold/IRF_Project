@@ -19,6 +19,8 @@ namespace Beadando
         List<Income> Incomes = new List<Income>();
         public string path = (@"C:\temp\Incomes\");
         public string filename = "2019.csv";
+        public SeriesChartType chartType = SeriesChartType.Line;
+
 
         public FinancialStatement()
         {
@@ -56,7 +58,7 @@ namespace Beadando
 
             using (StreamReader sr = new StreamReader(csvpath, Encoding.Default))
             {
-                while(!sr.EndOfStream)
+                while (!sr.EndOfStream)
                 {
                     var line = sr.ReadLine().Split(';');
                     incomes.Add(new Income()
@@ -87,30 +89,24 @@ namespace Beadando
 
 
         //---CUSTOMIZATION BUTTONS---//
-        /*El kell majd tárolni egy változóban kb mindent, ami a charttal kapcsolatos, a színt is
-         meg a typeot is, csak a közöseket szabad bennehagyni a közösben.*/
+        /*El kell majd tárolni egy változóban a színt*/
         private void ButtonBar_Click(object sender, EventArgs e)
         {
-            var series = chart1.Series[0];
-            series.ChartType = SeriesChartType.Bar;
-            series.XValueMember = "MonthString";
-            series.YValueMembers = "Value";
+            chartType = SeriesChartType.Bar;
+            InteractiveClick();
         }
 
         private void ButtonLine_Click(object sender, EventArgs e)
         {
-            var series = chart1.Series[0];
-            series.ChartType = SeriesChartType.Line;
-            series.XValueMember = "MonthString";
-            series.YValueMembers = "Value";
+            chartType = SeriesChartType.Line;
+            InteractiveClick();
         }
 
         private void ButtonPie_Click(object sender, EventArgs e)
         {
-            var series = chart1.Series[0];
-            series.ChartType = SeriesChartType.Doughnut;
-            series.XValueMember = "MonthString";
-            series.YValueMembers = "Value";
+            chartType = SeriesChartType.Doughnut;
+            InteractiveClick();
+
         }
 
         private void ButtonColor_Click(object sender, EventArgs e)
@@ -156,12 +152,17 @@ namespace Beadando
 
         private void ButtonYearSelect_Click(object sender, EventArgs e)
         {
+            InteractiveClick();
+        }
+
+        private void InteractiveClick()
+        {
             if (radioIncomes.Checked)
             {
                 Incomes = GetIncomes(path + filename);
                 chart1.DataSource = Incomes;
                 var series = chart1.Series[0];
-                series.ChartType = SeriesChartType.Line;
+                series.ChartType = chartType;
                 series.XValueMember = "MonthString";
                 series.YValueMembers = "Value";
             }
@@ -171,7 +172,7 @@ namespace Beadando
                 Expenses = GetExpenses(path + filename);
                 chart1.DataSource = Expenses;
                 var series = chart1.Series[0];
-                series.ChartType = SeriesChartType.Line;
+                series.ChartType = chartType;
                 series.XValueMember = "MonthString";
                 series.YValueMembers = "Value";
             }

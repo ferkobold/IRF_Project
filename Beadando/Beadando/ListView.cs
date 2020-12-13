@@ -18,7 +18,7 @@ namespace Beadando
         List<Income> Incomes = new List<Income>();
         public string path = (@"C:\temp\Incomes\");
         public string filename = "2019.csv";
-        
+
         public ListView()
         {
             InitializeComponent();

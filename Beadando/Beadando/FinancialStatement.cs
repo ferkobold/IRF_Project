@@ -19,7 +19,7 @@ namespace Beadando
         List<Income> Incomes = new List<Income>();
         public string path = (@"C:\temp\Incomes\");
         public string filename = "2019.csv";
-        public SeriesChartType chartType = SeriesChartType.Line;
+        SeriesChartType chartType = SeriesChartType.Line;
 
 
         public FinancialStatement()

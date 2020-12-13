@@ -70,7 +70,7 @@ namespace Beadando
 
 
 
-        //---SETTING THE DATASOURCE OF THE DATAGRIDVIEW---//
+        //---INTERACTIVE DATAGRIDVIEW---//
         private void ButtonYearSelect_Click(object sender, EventArgs e)
         {
             if (radioIncomes.Checked)

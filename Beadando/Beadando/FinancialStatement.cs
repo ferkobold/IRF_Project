@@ -185,5 +185,11 @@ namespace Beadando
                 series.Color = color;
             }
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            TestChart testChart = new TestChart();
+            testChart.ShowDialog();
+        }
     }
 }

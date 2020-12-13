@@ -20,6 +20,7 @@ namespace Beadando
         public string path = (@"C:\temp\Incomes\");
         public string filename = "2019.csv";
         SeriesChartType chartType = SeriesChartType.Line;
+        Color color = Color.Red; //ebben tároljuk a colort, amit majd megváltoztatunk a gombokkal
 
 
         public FinancialStatement()
@@ -111,8 +112,13 @@ namespace Beadando
 
         private void ButtonColor_Click(object sender, EventArgs e)
         {
-            //kell csinálni egy változót, ami eltárolja a színt és a többinek
-            //meg kell adni ezt a változót a szín propertynek
+            var colorPicker = new ColorDialog();
+            if (colorPicker.ShowDialog() != DialogResult.OK)
+            {
+                return;               
+            }
+            color = colorPicker.Color;
+            InteractiveClick();
         }
 
         private void ButtonList_Click(object sender, EventArgs e)
@@ -165,6 +171,7 @@ namespace Beadando
                 series.ChartType = chartType;
                 series.XValueMember = "MonthString";
                 series.YValueMembers = "Value";
+                series.Color = color;
             }
 
             if (radioExpenses.Checked)
@@ -175,6 +182,7 @@ namespace Beadando
                 series.ChartType = chartType;
                 series.XValueMember = "MonthString";
                 series.YValueMembers = "Value";
+                series.Color = color;
             }
         }
     }

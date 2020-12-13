@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using Beadando.Entities;
+using System.Linq;
 
 namespace Beadando
 {
@@ -103,12 +104,38 @@ namespace Beadando
 
 
         //---CURRENTLY WOTRKING ON LINQ CHART VALUES---//
+        /*
+        Már a DataSourcet kell megváltoztatni, tehát nekem lesz egy listám, pl az Expenses lista, és akkor abból kell majd csinálni egy libQ lekérdezést 
+        */
         private void InteractiveClick()
         {
+            /*Ha majd berakok monthPickert, akkor majd ide kell egy listában megadni, 
+             * hogy mi kellenek, tehát kell egy változó lista, amiben eltárolom a hónapokat, 
+             * amik be vannak pipálva és akkor majd azokat fogom megjeleníteni*/
+
+            var incomes = from x in Incomes
+                          group x by x.MonthString into asd
+                          select new { MonthString = asd.Key,
+                                 Value = asd.Sum(
+                          item => item.Value) };
+
+            var expenses = from x in Expenses
+                           group x by x.MonthString into asd
+                           select new
+                           {
+                               MonthString = asd.Key,
+                               Value = asd.Sum(
+                           item => item.Value)
+                           };
+
+
             if (radioIncomes.Checked)
             {
                 Incomes = GetIncomes(path + filename);
-                chart1.DataSource = Incomes;
+                chart1.DataSource = incomes.ToList();
+
+
+
                 var series = chart1.Series[0];
                 series.ChartType = SeriesChartType.Line;
                 series.XValueMember = "MonthString";
@@ -119,7 +146,11 @@ namespace Beadando
             if (radioExpenses.Checked)
             {
                 Expenses = GetExpenses(path + filename);
-                chart1.DataSource = Expenses;
+                chart1.DataSource = expenses.ToList();
+
+
+
+
                 var series = chart1.Series[0];
                 series.ChartType = SeriesChartType.Line;
                 series.XValueMember = "MonthString";

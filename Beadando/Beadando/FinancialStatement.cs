@@ -209,5 +209,10 @@ namespace Beadando
             TestChart testChart = new TestChart();
             testChart.ShowDialog();
         }
+
+        private void CheckedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

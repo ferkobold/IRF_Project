@@ -212,7 +212,7 @@ namespace Beadando
 
         private void CheckedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

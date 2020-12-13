@@ -18,6 +18,7 @@ namespace Beadando
     {
         List<Expense> Expenses = new List<Expense>();
         List<Income> Incomes = new List<Income>();
+        List<Month> activemonths = new List<Month>();
         public string path = (@"C:\temp\Incomes\");
         public string filename = "2019.csv";
         public TestChart()
@@ -146,6 +147,15 @@ namespace Beadando
                 series.YValueMembers = "Value";
                 series.Color = Color.Red;
             }
+        }
+
+
+
+
+
+        private void CheckedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

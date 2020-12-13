@@ -109,10 +109,7 @@ namespace Beadando
         */
         private void InteractiveClick()
         {
-            /*Ha majd berakok monthPickert, akkor majd ide kell egy listában megadni, 
-             * hogy mi kellenek, tehát kell egy változó lista, amiben eltárolom a hónapokat, 
-             * amik be vannak pipálva és akkor majd azokat fogom megjeleníteni*/
-
+        //---Linq Lekérdezés a listákhoz---//
             var incomes = from x in Incomes
                           group x by x.MonthString into asd
                           select new { MonthString = asd.Key,
@@ -128,14 +125,10 @@ namespace Beadando
                            item => item.Value)
                            };
 
-
             if (radioIncomes.Checked)
             {
                 Incomes = GetIncomes(path + filename);
                 chart1.DataSource = incomes.ToList();
-
-
-
                 var series = chart1.Series[0];
                 series.ChartType = SeriesChartType.Line;
                 series.XValueMember = "MonthString";
@@ -147,10 +140,6 @@ namespace Beadando
             {
                 Expenses = GetExpenses(path + filename);
                 chart1.DataSource = expenses.ToList();
-
-
-
-
                 var series = chart1.Series[0];
                 series.ChartType = SeriesChartType.Line;
                 series.XValueMember = "MonthString";

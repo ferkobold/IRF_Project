@@ -155,6 +155,7 @@ namespace Beadando
         private void ButtonYearSelect_Click(object sender, EventArgs e)
         {
             InteractiveClick();
+
         }
 
         private void InteractiveClick()
@@ -187,7 +188,7 @@ namespace Beadando
                 Expenses = GetExpenses(path + filename);
                 foreach (string itemChecked in checkedListBox1.CheckedItems)
                 {
-                    Incomes.RemoveAll(x => x.MonthString == itemChecked);
+                    Expenses.RemoveAll(x => x.MonthString == itemChecked);
                 }
                 var expenses = from x in Expenses
                                group x by x.MonthString into asd
@@ -210,6 +211,11 @@ namespace Beadando
         {
             TestChart testChart = new TestChart();
             testChart.ShowDialog();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            InteractiveClick();
         }
     }
 }

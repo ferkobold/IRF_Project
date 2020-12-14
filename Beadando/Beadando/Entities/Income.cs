@@ -25,5 +25,12 @@ namespace Beadando.Entities
                 return (int)Month;
             }
         }
+        public string IncomeTypeString
+        {
+            get
+            {
+                return Incometype.ToString();
+            }
+        }
     }
 }

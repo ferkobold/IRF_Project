@@ -25,5 +25,12 @@ namespace Beadando.Entities
                 return (int)Month;
             }
         }
+        public string ExpenseTypeString
+        {
+            get
+            {
+                return Expensetype.ToString();
+            }
+        }
     }
 }

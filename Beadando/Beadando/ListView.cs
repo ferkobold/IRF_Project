@@ -18,6 +18,8 @@ namespace Beadando
         List<Income> Incomes = new List<Income>();
         public string path = (@"C:\temp\Incomes\");
         public string filename = "2019.csv";
+        List<string> incometypes = new List<string> { "Értékesítés", "Pénzügyi", "Egyéb" };
+        List<string> expensetypes = new List<string> { "Közvetlen", "Pénzügyi", "Adminisztratív", "Értékesítés", "Egyéb" };
 
         public ListView()
         {
@@ -93,6 +95,7 @@ namespace Beadando
             comboBox1.DataSource = Files;
             comboBox1.DisplayMember = "Name";
             path = (@"C:\temp\Incomes\");
+            comboBox2.DataSource = incometypes;
         }
 
         private void RadioExpenses_CheckedChanged(object sender, EventArgs e)
@@ -102,11 +105,31 @@ namespace Beadando
             comboBox1.DataSource = Files;
             comboBox1.DisplayMember = "Name";
             path = (@"C:\temp\Expenses\");
+            comboBox2.DataSource = expensetypes;
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             filename = comboBox1.Text;
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            if (radioIncomes.Checked)
+            {
+                Incomes = GetIncomes(path + filename);
+                Incomes.RemoveAll(x => x.IncomeTypeString == comboBox2.SelectedItem.ToString());
+                dataGridView1.DataSource = Incomes;
+                
+            }
+
+            if (radioExpenses.Checked)
+            {
+                Expenses = GetExpenses(path + filename);
+                Expenses.RemoveAll(x => x.ExpenseTypeString == comboBox2.SelectedItem.ToString());
+                dataGridView1.DataSource = Expenses;
+            }
+
         }
     }
 }

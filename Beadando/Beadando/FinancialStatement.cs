@@ -207,12 +207,6 @@ namespace Beadando
             }
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            TestChart testChart = new TestChart();
-            testChart.ShowDialog();
-        }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             InteractiveClick();

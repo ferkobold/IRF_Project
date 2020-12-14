@@ -139,7 +139,7 @@ namespace Beadando
                 }
                 foreach (string itemChecked in checkedListBox2.CheckedItems)
                 {
-                    Incomes.RemoveAll(x => x.MonthString == itemChecked);
+                    Expenses.RemoveAll(x => x.MonthString == itemChecked);
                 }
                 dataGridView1.DataSource = Expenses;
             }

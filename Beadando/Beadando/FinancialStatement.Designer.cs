@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -52,28 +52,32 @@
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
             this.chart1.Location = new System.Drawing.Point(280, 12);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chart1.Series.Add(series5);
             this.chart1.Size = new System.Drawing.Size(390, 426);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(692, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.Size = new System.Drawing.Size(111, 13);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Customize your chart!";
+            this.label1.Text = "Customize your graph!";
             // 
             // buttonSave
             // 
@@ -163,7 +167,7 @@
             this.buttonYearSelect.Name = "buttonYearSelect";
             this.buttonYearSelect.Size = new System.Drawing.Size(142, 35);
             this.buttonYearSelect.TabIndex = 12;
-            this.buttonYearSelect.Text = "Show on the chart";
+            this.buttonYearSelect.Text = "Show on the graph";
             this.buttonYearSelect.UseVisualStyleBackColor = true;
             this.buttonYearSelect.Click += new System.EventHandler(this.ButtonYearSelect_Click);
             // 
@@ -179,6 +183,7 @@
             // 
             // buttonList
             // 
+            this.buttonList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonList.BackgroundImage = global::Beadando.Properties.Resources.ListViewGood;
             this.buttonList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonList.Location = new System.Drawing.Point(709, 376);
@@ -190,6 +195,7 @@
             // 
             // buttonColor
             // 
+            this.buttonColor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonColor.BackgroundImage = global::Beadando.Properties.Resources.ColorPickerGood;
             this.buttonColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonColor.Location = new System.Drawing.Point(709, 273);
@@ -201,6 +207,7 @@
             // 
             // buttonPie
             // 
+            this.buttonPie.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonPie.BackgroundImage = global::Beadando.Properties.Resources.PieChartGood;
             this.buttonPie.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonPie.Location = new System.Drawing.Point(709, 194);
@@ -212,6 +219,7 @@
             // 
             // buttonLine
             // 
+            this.buttonLine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonLine.BackgroundImage = global::Beadando.Properties.Resources.LineChartGood;
             this.buttonLine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonLine.Location = new System.Drawing.Point(709, 115);
@@ -223,6 +231,7 @@
             // 
             // buttonBar
             // 
+            this.buttonBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonBar.BackgroundImage = global::Beadando.Properties.Resources.BarChartGood;
             this.buttonBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonBar.Location = new System.Drawing.Point(709, 36);

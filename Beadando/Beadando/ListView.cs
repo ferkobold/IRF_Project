@@ -95,7 +95,6 @@ namespace Beadando
             comboBox1.DataSource = Files;
             comboBox1.DisplayMember = "Name";
             path = (@"C:\temp\Incomes\");
-            comboBox2.DataSource = incometypes;
             checkedListBox1.DataSource = incometypes;
         }
 
@@ -106,7 +105,6 @@ namespace Beadando
             comboBox1.DataSource = Files;
             comboBox1.DisplayMember = "Name";
             path = (@"C:\temp\Expenses\");
-            comboBox2.DataSource = expensetypes;
             checkedListBox1.DataSource = expensetypes;
         }
 
@@ -120,9 +118,12 @@ namespace Beadando
             if (radioIncomes.Checked)
             {
                 Incomes = GetIncomes(path + filename);
-                Incomes.RemoveAll(x => x.IncomeTypeString == comboBox2.SelectedItem.ToString());
+                foreach (string itemChecked in checkedListBox1.CheckedItems)
+                {
+                    Incomes.RemoveAll(x => x.IncomeTypeString == itemChecked);
+                }
                 dataGridView1.DataSource = Incomes;
-                
+
             }
 
             if (radioExpenses.Checked)

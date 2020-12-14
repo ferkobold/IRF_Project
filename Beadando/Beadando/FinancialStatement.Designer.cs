@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -55,16 +55,18 @@
             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chart1.Legends.Add(legend5);
+            this.chart1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.chart1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(158)))), ((int)(((byte)(223)))));
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(280, 12);
             this.chart1.Name = "chart1";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chart1.Series.Add(series5);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(390, 426);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -81,25 +83,30 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(164, 36);
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(158)))), ((int)(((byte)(223)))));
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.Location = new System.Drawing.Point(175, 55);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(99, 105);
             this.buttonSave.TabIndex = 8;
             this.buttonSave.Text = "Save the graph";
-            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 12);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(13, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(201, 13);
+            this.label2.Size = new System.Drawing.Size(262, 17);
             this.label2.TabIndex = 9;
             this.label2.Text = "Welcome to the financial statement view!";
             // 
             // checkedListBox1
             // 
+            this.checkedListBox1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Items.AddRange(new object[] {
             "Január",
@@ -116,22 +123,24 @@
             "December"});
             this.checkedListBox1.Location = new System.Drawing.Point(84, 205);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(112, 184);
+            this.checkedListBox1.Size = new System.Drawing.Size(112, 180);
             this.checkedListBox1.TabIndex = 10;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 178);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(12, 187);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(215, 13);
+            this.label3.Size = new System.Drawing.Size(244, 15);
             this.label3.TabIndex = 11;
             this.label3.Text = "Select the months you would not like to see!";
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 79);
+            this.comboBox1.Location = new System.Drawing.Point(27, 98);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(142, 21);
             this.comboBox1.TabIndex = 15;
@@ -140,7 +149,7 @@
             // radioExpenses
             // 
             this.radioExpenses.AutoSize = true;
-            this.radioExpenses.Location = new System.Drawing.Point(16, 55);
+            this.radioExpenses.Location = new System.Drawing.Point(27, 74);
             this.radioExpenses.Name = "radioExpenses";
             this.radioExpenses.Size = new System.Drawing.Size(71, 17);
             this.radioExpenses.TabIndex = 14;
@@ -152,7 +161,7 @@
             // radioIncomes
             // 
             this.radioIncomes.AutoSize = true;
-            this.radioIncomes.Location = new System.Drawing.Point(16, 32);
+            this.radioIncomes.Location = new System.Drawing.Point(27, 51);
             this.radioIncomes.Name = "radioIncomes";
             this.radioIncomes.Size = new System.Drawing.Size(65, 17);
             this.radioIncomes.TabIndex = 13;
@@ -163,88 +172,103 @@
             // 
             // buttonYearSelect
             // 
-            this.buttonYearSelect.Location = new System.Drawing.Point(16, 106);
+            this.buttonYearSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(158)))), ((int)(((byte)(223)))));
+            this.buttonYearSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonYearSelect.Location = new System.Drawing.Point(27, 125);
             this.buttonYearSelect.Name = "buttonYearSelect";
             this.buttonYearSelect.Size = new System.Drawing.Size(142, 35);
             this.buttonYearSelect.TabIndex = 12;
             this.buttonYearSelect.Text = "Show on the graph";
-            this.buttonYearSelect.UseVisualStyleBackColor = true;
+            this.buttonYearSelect.UseVisualStyleBackColor = false;
             this.buttonYearSelect.Click += new System.EventHandler(this.ButtonYearSelect_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(158)))), ((int)(((byte)(223)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(84, 395);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 43);
             this.button1.TabIndex = 16;
             this.button1.Text = "TEST CHART";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // buttonList
             // 
             this.buttonList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonList.BackgroundImage = global::Beadando.Properties.Resources.ListViewGood;
+            this.buttonList.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonList.BackgroundImage = global::Beadando.Properties.Resources.ListViewGood1;
             this.buttonList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonList.Location = new System.Drawing.Point(709, 376);
             this.buttonList.Name = "buttonList";
             this.buttonList.Size = new System.Drawing.Size(62, 62);
             this.buttonList.TabIndex = 5;
-            this.buttonList.UseVisualStyleBackColor = true;
+            this.buttonList.UseVisualStyleBackColor = false;
             this.buttonList.Click += new System.EventHandler(this.ButtonList_Click);
             // 
             // buttonColor
             // 
             this.buttonColor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonColor.BackgroundImage = global::Beadando.Properties.Resources.ColorPickerGood;
+            this.buttonColor.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonColor.BackgroundImage = global::Beadando.Properties.Resources.ColorPickerGood2;
             this.buttonColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonColor.Location = new System.Drawing.Point(709, 273);
             this.buttonColor.Name = "buttonColor";
             this.buttonColor.Size = new System.Drawing.Size(62, 62);
             this.buttonColor.TabIndex = 4;
-            this.buttonColor.UseVisualStyleBackColor = true;
+            this.buttonColor.UseVisualStyleBackColor = false;
             this.buttonColor.Click += new System.EventHandler(this.ButtonColor_Click);
             // 
             // buttonPie
             // 
             this.buttonPie.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonPie.BackgroundImage = global::Beadando.Properties.Resources.PieChartGood;
+            this.buttonPie.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonPie.BackgroundImage = global::Beadando.Properties.Resources.PieChartGood1;
             this.buttonPie.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonPie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPie.Location = new System.Drawing.Point(709, 194);
             this.buttonPie.Name = "buttonPie";
             this.buttonPie.Size = new System.Drawing.Size(62, 62);
             this.buttonPie.TabIndex = 3;
-            this.buttonPie.UseVisualStyleBackColor = true;
+            this.buttonPie.UseVisualStyleBackColor = false;
             this.buttonPie.Click += new System.EventHandler(this.ButtonPie_Click);
             // 
             // buttonLine
             // 
             this.buttonLine.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonLine.BackgroundImage = global::Beadando.Properties.Resources.LineChartGood;
+            this.buttonLine.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonLine.BackgroundImage = global::Beadando.Properties.Resources.LineChartGood1;
             this.buttonLine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLine.Location = new System.Drawing.Point(709, 115);
             this.buttonLine.Name = "buttonLine";
             this.buttonLine.Size = new System.Drawing.Size(62, 62);
             this.buttonLine.TabIndex = 2;
-            this.buttonLine.UseVisualStyleBackColor = true;
+            this.buttonLine.UseVisualStyleBackColor = false;
             this.buttonLine.Click += new System.EventHandler(this.ButtonLine_Click);
             // 
             // buttonBar
             // 
             this.buttonBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBar.BackgroundImage = global::Beadando.Properties.Resources.BarChartGood;
+            this.buttonBar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonBar.BackgroundImage = global::Beadando.Properties.Resources.BarChartGood1;
             this.buttonBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonBar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBar.Location = new System.Drawing.Point(709, 36);
             this.buttonBar.Name = "buttonBar";
             this.buttonBar.Size = new System.Drawing.Size(62, 62);
             this.buttonBar.TabIndex = 1;
-            this.buttonBar.UseVisualStyleBackColor = true;
+            this.buttonBar.UseVisualStyleBackColor = false;
             this.buttonBar.Click += new System.EventHandler(this.ButtonBar_Click);
             // 
             // FinancialStatement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(812, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);

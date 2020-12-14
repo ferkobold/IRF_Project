@@ -122,6 +122,14 @@
     <Content Include="Assets\PieChartGood.png" />
     <Content Include="PATTERN.txt" />
     <Content Include="README.txt" />
+    <None Include="Resources\GraphIconGoodBlue.png" />
+    <None Include="Resources\ListViewGood.png" />
+    <None Include="Resources\ColorPickerGood1.png" />
+    <None Include="Resources\ColorPickerGood.png" />
+    <None Include="Resources\PieChartGood.png" />
+    <None Include="Resources\LineChartGood.png" />
+    <None Include="Resources\BarChartGood.png" />
+    <None Include="Resources\BarChartGoodBlue.png" />
     <None Include="Resources\GraphIconGood.png" />
   </ItemGroup>
   <ItemGroup />

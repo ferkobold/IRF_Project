@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using Beadando.Entities;
 using System.Linq;
+using System.Collections;
 
 namespace Beadando
 {
@@ -18,14 +19,15 @@ namespace Beadando
     {
         List<Expense> Expenses = new List<Expense>();
         List<Income> Incomes = new List<Income>();
-        List<Month> activemonths = new List<Month>();
         public string path = (@"C:\temp\Incomes\");
         public string filename = "2019.csv";
+        List<Month> x2 = new List<Month>();
         public TestChart()
         {
             InitializeComponent();
             Expenses = GetExpenses(path + filename);
             Incomes = GetIncomes(path + filename);
+            
         }
 
         //---CREATING INCOME/EXPENSE LISTS---//
@@ -73,6 +75,7 @@ namespace Beadando
 
 
 
+
         //---INTERACTIVE CHART---//
         private void RadioIncomes_CheckedChanged(object sender, EventArgs e)
         {
@@ -110,7 +113,7 @@ namespace Beadando
         */
         private void InteractiveClick()
         {
-        //---Linq Lekérdezés a listákhoz---//
+            //---Linq Lekérdezés a listákhoz---//
             var incomes = from x in Incomes
                           group x by x.MonthString into asd
                           select new { MonthString = asd.Key,
@@ -130,6 +133,7 @@ namespace Beadando
             {
                 Incomes = GetIncomes(path + filename);
                 chart1.DataSource = incomes.ToList();
+                //checkedListBox1.DataSource = incomes.ToList();
                 var series = chart1.Series[0];
                 series.ChartType = SeriesChartType.Line;
                 series.XValueMember = "MonthString";
@@ -141,6 +145,7 @@ namespace Beadando
             {
                 Expenses = GetExpenses(path + filename);
                 chart1.DataSource = expenses.ToList();
+                //checkedListBox1.DataSource = expenses.ToList();
                 var series = chart1.Series[0];
                 series.ChartType = SeriesChartType.Line;
                 series.XValueMember = "MonthString";
@@ -149,13 +154,27 @@ namespace Beadando
             }
         }
 
+        
 
 
 
-
-        private void CheckedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        //---BAL OLDALI DGW EGY HÓNAPRA MŰKÖDIK---//
+        private void Button1_Click(object sender, EventArgs e)
         {
+            var filteredincomes = from x in Incomes
+                                  where x.MonthString == comboBox2.SelectedItem.ToString()
+                                  select x;
+            dataGridView1.DataSource = filteredincomes.ToList();
+        }
 
+
+        //---JOBB OLDALI DGW---//
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            var filteredincomes = from x in Incomes
+                                  where x.MonthString == comboBox2.SelectedItem.ToString()
+                                  select x;
+            dataGridView2.DataSource = filteredincomes.ToList();
         }
     }
 }

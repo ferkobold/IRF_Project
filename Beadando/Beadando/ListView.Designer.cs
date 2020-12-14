@@ -36,6 +36,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,14 +45,14 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(177, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(611, 268);
+            this.dataGridView1.Size = new System.Drawing.Size(611, 476);
             this.dataGridView1.TabIndex = 0;
             // 
             // buttonYearSelect
             // 
             this.buttonYearSelect.Location = new System.Drawing.Point(12, 86);
             this.buttonYearSelect.Name = "buttonYearSelect";
-            this.buttonYearSelect.Size = new System.Drawing.Size(142, 38);
+            this.buttonYearSelect.Size = new System.Drawing.Size(151, 38);
             this.buttonYearSelect.TabIndex = 2;
             this.buttonYearSelect.Text = "button1";
             this.buttonYearSelect.UseVisualStyleBackColor = true;
@@ -86,15 +87,15 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(12, 59);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(142, 21);
+            this.comboBox1.Size = new System.Drawing.Size(151, 21);
             this.comboBox1.TabIndex = 7;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 238);
+            this.button1.Location = new System.Drawing.Point(12, 446);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 42);
+            this.button1.Size = new System.Drawing.Size(151, 42);
             this.button1.TabIndex = 8;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -103,7 +104,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 137);
+            this.label1.Location = new System.Drawing.Point(9, 155);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(154, 13);
             this.label1.TabIndex = 10;
@@ -112,16 +113,38 @@
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(12, 153);
+            this.checkedListBox1.Location = new System.Drawing.Point(12, 171);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(142, 79);
+            this.checkedListBox1.Size = new System.Drawing.Size(151, 79);
             this.checkedListBox1.TabIndex = 11;
+            // 
+            // checkedListBox2
+            // 
+            this.checkedListBox2.FormattingEnabled = true;
+            this.checkedListBox2.Items.AddRange(new object[] {
+            "Január",
+            "Február",
+            "Március",
+            "Április",
+            "Május",
+            "Június",
+            "Július",
+            "Augusztus",
+            "Szeptember",
+            "Október",
+            "November",
+            "December"});
+            this.checkedListBox2.Location = new System.Drawing.Point(12, 256);
+            this.checkedListBox2.Name = "checkedListBox2";
+            this.checkedListBox2.Size = new System.Drawing.Size(151, 184);
+            this.checkedListBox2.TabIndex = 12;
             // 
             // ListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 292);
+            this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.checkedListBox2);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -148,5 +171,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox checkedListBox2;
     }
 }

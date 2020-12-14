@@ -122,6 +122,10 @@ namespace Beadando
                 {
                     Incomes.RemoveAll(x => x.IncomeTypeString == itemChecked);
                 }
+                foreach (string itemChecked in checkedListBox2.CheckedItems)
+                {
+                    Incomes.RemoveAll(x => x.MonthString == itemChecked);
+                }
                 dataGridView1.DataSource = Incomes;
 
             }
@@ -132,6 +136,10 @@ namespace Beadando
                 foreach (string itemChecked in checkedListBox1.CheckedItems)
                 {
                     Expenses.RemoveAll(x => x.ExpenseTypeString == itemChecked);
+                }
+                foreach (string itemChecked in checkedListBox2.CheckedItems)
+                {
+                    Incomes.RemoveAll(x => x.MonthString == itemChecked);
                 }
                 dataGridView1.DataSource = Expenses;
             }

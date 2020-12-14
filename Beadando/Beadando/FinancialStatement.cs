@@ -129,9 +129,6 @@ namespace Beadando
 
 
         //---INTERACTIVE GRAPH---//
-        /*Itt majd kell egy linQ lekérdezés, amiben összeadom
-            a hónap összes kiadását, bevételét, és annak az értékét 
-            jelenítem meg a grafikonon.*/
         private void RadioIncomes_CheckedChanged(object sender, EventArgs e)
         {
             DirectoryInfo d = new DirectoryInfo(@"C:\temp\Incomes");

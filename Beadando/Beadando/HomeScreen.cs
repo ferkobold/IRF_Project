@@ -16,5 +16,17 @@ namespace Beadando
         {
             InitializeComponent();
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            FinancialStatement fs = new FinancialStatement();
+            fs.ShowDialog();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            ListView lv = new ListView();
+            lv.ShowDialog();
+        }
     }
 }

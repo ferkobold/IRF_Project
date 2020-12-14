@@ -16,7 +16,7 @@ namespace Beadando
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FinancialStatement());
+            Application.Run(new HomeScreen());
         }
     }
 }

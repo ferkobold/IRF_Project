@@ -81,6 +81,9 @@
     <EmbeddedResource Include="FinancialStatement.resx">
       <DependentUpon>FinancialStatement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HomeScreen.resx">
+      <DependentUpon>HomeScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListView.resx">
       <DependentUpon>ListView.cs</DependentUpon>
     </EmbeddedResource>

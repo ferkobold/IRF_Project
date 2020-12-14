@@ -172,7 +172,7 @@ namespace Beadando
         private void Button2_Click(object sender, EventArgs e)
         {
             var filteredincomes = from x in Incomes
-                                  where x.MonthString == comboBox2.SelectedItem.ToString()
+                                  where x.MonthString == checkedListBox1.CheckedItems.ToString()
                                   select x;
             dataGridView2.DataSource = filteredincomes.ToList();
         }

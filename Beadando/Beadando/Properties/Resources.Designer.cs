@@ -93,6 +93,16 @@ namespace Beadando.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GraphIconGood {
+            get {
+                object obj = ResourceManager.GetObject("GraphIconGood", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LineChartGood {
             get {
                 object obj = ResourceManager.GetObject("LineChartGood", resourceCulture);

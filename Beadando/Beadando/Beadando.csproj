@@ -122,6 +122,7 @@
     <Content Include="Assets\PieChartGood.png" />
     <Content Include="PATTERN.txt" />
     <Content Include="README.txt" />
+    <None Include="Resources\GraphIconGood.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

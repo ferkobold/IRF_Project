@@ -11,7 +11,7 @@ namespace Beadando.Entities
         Közvetlen = 1,
         Pénzügyi = 2,
         Adminisztratív = 3,
-        Értékesítési = 4,
+        Értékesítés = 4,
         Egyéb = 5
     }
 }

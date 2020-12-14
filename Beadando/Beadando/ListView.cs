@@ -96,6 +96,7 @@ namespace Beadando
             comboBox1.DisplayMember = "Name";
             path = (@"C:\temp\Incomes\");
             comboBox2.DataSource = incometypes;
+            checkedListBox1.DataSource = incometypes;
         }
 
         private void RadioExpenses_CheckedChanged(object sender, EventArgs e)
@@ -106,6 +107,7 @@ namespace Beadando
             comboBox1.DisplayMember = "Name";
             path = (@"C:\temp\Expenses\");
             comboBox2.DataSource = expensetypes;
+            checkedListBox1.DataSource = expensetypes;
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -126,10 +128,12 @@ namespace Beadando
             if (radioExpenses.Checked)
             {
                 Expenses = GetExpenses(path + filename);
-                Expenses.RemoveAll(x => x.ExpenseTypeString == comboBox2.SelectedItem.ToString());
+                foreach (string itemChecked in checkedListBox1.CheckedItems)
+                {
+                    Expenses.RemoveAll(x => x.ExpenseTypeString == itemChecked);
+                }
                 dataGridView1.DataSource = Expenses;
             }
-
         }
     }
 }

@@ -144,5 +144,12 @@ namespace Beadando
                 dataGridView1.DataSource = Expenses;
             }
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            FinancialStatement fn = new FinancialStatement();
+            fn.ShowDialog();
+            this.Close();
+        }
     }
 }

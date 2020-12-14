@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListView));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonYearSelect = new System.Windows.Forms.Button();
             this.radioIncomes = new System.Windows.Forms.RadioButton();
@@ -44,10 +45,14 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(177, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(611, 524);
+            this.dataGridView1.Size = new System.Drawing.Size(611, 542);
             this.dataGridView1.TabIndex = 0;
             // 
             // buttonYearSelect
@@ -152,18 +157,21 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 494);
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(55, 492);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(151, 42);
+            this.button2.Size = new System.Drawing.Size(62, 62);
             this.button2.TabIndex = 14;
-            this.button2.Text = "Graphed statements";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // ListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 548);
+            this.ClientSize = new System.Drawing.Size(800, 566);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.checkedListBox2);

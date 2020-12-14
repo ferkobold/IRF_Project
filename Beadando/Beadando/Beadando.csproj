@@ -116,6 +116,7 @@
   <ItemGroup>
     <Content Include="Assets\BarChartGood.png" />
     <Content Include="Assets\ColorPickerGood.png" />
+    <Content Include="Assets\GraphIconGood.png" />
     <Content Include="Assets\LineChartGood.png" />
     <Content Include="Assets\ListViewGood.png" />
     <Content Include="Assets\PieChartGood.png" />

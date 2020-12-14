@@ -20,7 +20,7 @@ namespace Beadando
         public string path = (@"C:\temp\Incomes\");
         public string filename = "2019.csv";
         SeriesChartType chartType = SeriesChartType.Line;
-        Color color = Color.Red; //ebben tároljuk a colort, amit majd megváltoztatunk a gombokkal
+        Color color = Color.Red;
 
 
         public FinancialStatement()
@@ -90,7 +90,6 @@ namespace Beadando
 
 
         //---CUSTOMIZATION BUTTONS---//
-        /*El kell majd tárolni egy változóban a színt*/
         private void ButtonBar_Click(object sender, EventArgs e)
         {
             chartType = SeriesChartType.Bar;
@@ -115,7 +114,7 @@ namespace Beadando
             var colorPicker = new ColorDialog();
             if (colorPicker.ShowDialog() != DialogResult.OK)
             {
-                return;               
+                return;
             }
             color = colorPicker.Color;
             InteractiveClick();
@@ -163,11 +162,13 @@ namespace Beadando
 
         private void InteractiveClick()
         {
-            
-
             if (radioIncomes.Checked)
             {
                 Incomes = GetIncomes(path + filename);
+                foreach (string itemChecked in checkedListBox1.CheckedItems)
+                {
+                    Incomes.RemoveAll(x => x.MonthString == itemChecked);
+                }
                 var incomes = from x in Incomes
                               group x by x.MonthString into asd
                               select new
@@ -187,6 +188,10 @@ namespace Beadando
             if (radioExpenses.Checked)
             {
                 Expenses = GetExpenses(path + filename);
+                foreach (string itemChecked in checkedListBox1.CheckedItems)
+                {
+                    Incomes.RemoveAll(x => x.MonthString == itemChecked);
+                }
                 var expenses = from x in Expenses
                                group x by x.MonthString into asd
                                select new
@@ -208,11 +213,6 @@ namespace Beadando
         {
             TestChart testChart = new TestChart();
             testChart.ShowDialog();
-        }
-
-        private void CheckedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
         }
     }
 }

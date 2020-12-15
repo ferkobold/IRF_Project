@@ -1,6 +1,7 @@
 Üdvözlök mindenkit a Beam Statements pénzügyi kimutatáskezelõ alkalmazásban. A program fõ célja, funkciója, hogy grafikusan, illetve listázva megmutassa az adott személynek / vállalatnak,
 hogy az adott évben mennyit költött, mennyi pénzt keresett. A tranzakciókat tartalmazó csv fájlt bárhogyan el lehet nevezni, lényeg, hogy a bevételeket a C:\temp\Incomes,
 a kiadásokat C:\temp\Expenses mappába rakjuk, hiszen innen tudja kiolvasni a szoftver az adatokat. 
+A solutionben van egy mappa "CSVs" néven, ebben bennevan 2-2 példa csv. Ha a mappában lévõ 2 mappát: Incomes, Expenses betesszük a C:\temp -be már mûködni is fog.
 A csv-knek szigorú formátumot kell követni:
 az "A" oszlopba kerül egy egész szám 1-12 között, ez lesz az adott hónap indexe, amikor a tranzakció megtörtént. 
 A második, "B" oszlopba kerülnek a bevétel, vagy kiadás típusai.

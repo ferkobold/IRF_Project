@@ -31,7 +31,7 @@ namespace Beadando
         }
 
 
-        //---CREATING INCOME/EXPENSE LISTS---//
+        //---FILLING INCOME/EXPENSE LISTS---//
         public List<Expense> GetExpenses(string csvpath)
         {
             List<Expense> expenses = new List<Expense>();

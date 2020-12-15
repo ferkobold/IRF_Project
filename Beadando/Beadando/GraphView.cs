@@ -31,7 +31,7 @@ namespace Beadando
 
 
 
-        //---CREATING INCOME/EXPENSE LISTS---//
+        //---FILLING INCOME/EXPENSE LISTS---//
         public List<Expense> GetExpenses(string csvpath)
         {
             List<Expense> expenses = new List<Expense>();
@@ -192,12 +192,6 @@ namespace Beadando
             InteractiveClick();
         }
 
-        private void ButtonList_Click(object sender, EventArgs e)
-        {
-            ListView listView = new ListView();
-            listView.ShowDialog();
-        }
-
 
 
         //---UTILITIES ON LEFT SIDE---//
@@ -209,6 +203,15 @@ namespace Beadando
                 frm.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
                 bmp.Save(@"c:\temp\screenshot.png");
             }
+        }
+
+
+
+        //---NAVIGATION---//
+        private void ButtonList_Click(object sender, EventArgs e)
+        {
+            ListView listView = new ListView();
+            listView.ShowDialog();
         }
     }
 }

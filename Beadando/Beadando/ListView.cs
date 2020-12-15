@@ -14,12 +14,14 @@ namespace Beadando
 {
     public partial class ListView : Form
     {
-        List<Expense> Expenses = new List<Expense>();
-        List<Income> Incomes = new List<Income>();
-        public string path = (@"C:\temp\Incomes\");
-        public string filename = "2019.csv";
-        List<string> incometypes = new List<string> { "Értékesítés", "Pénzügyi", "Egyéb" };
-        List<string> expensetypes = new List<string> { "Közvetlen", "Pénzügyi", "Adminisztratív", "Értékesítés", "Egyéb" };
+        List<Expense> Expenses = new List<Expense>();                               //Kiadás lista létrehozása
+        List<Income> Incomes = new List<Income>();                                  //Bevétel lista létrehozása
+        public string path = (@"C:\temp\Incomes\");                                 //Fájl kiolvasása, lokáció
+        public string filename = "2019.csv";                                        //Fájl kiolvasása, fájlnév
+        List<string> incometypes = new List<string>                                 //Bevétel típusok listája
+        { "Értékesítés", "Pénzügyi", "Egyéb" };                                     //Lista tartalma
+        List<string> expensetypes = new List<string>                                //Kiadás típusok listája
+        { "Közvetlen", "Pénzügyi", "Adminisztratív", "Értékesítés", "Egyéb" };      //Lista tartalma
 
         public ListView()
         {
@@ -72,22 +74,7 @@ namespace Beadando
 
 
 
-        //---INTERACTIVE DATAGRIDVIEW---//
-        private void ButtonYearSelect_Click(object sender, EventArgs e)
-        {
-            if (radioIncomes.Checked)
-            {
-                Incomes = GetIncomes(path + filename);
-                dataGridView1.DataSource = Incomes;
-            }
-
-            if (radioExpenses.Checked)
-            {
-                Expenses = GetExpenses(path + filename);
-                dataGridView1.DataSource = Expenses;
-            }
-        }
-
+        //---INITIAL LIST OF ITEMS---//
         private void RadioIncomes_CheckedChanged(object sender, EventArgs e)
         {
             DirectoryInfo d = new DirectoryInfo(@"C:\temp\Incomes");
@@ -113,6 +100,24 @@ namespace Beadando
             filename = comboBox1.Text;
         }
 
+        private void ButtonYearSelect_Click(object sender, EventArgs e)
+        {
+            if (radioIncomes.Checked)
+            {
+                Incomes = GetIncomes(path + filename);
+                dataGridView1.DataSource = Incomes;
+            }
+
+            if (radioExpenses.Checked)
+            {
+                Expenses = GetExpenses(path + filename);
+                dataGridView1.DataSource = Expenses;
+            }
+        }
+
+
+
+        //---DELETING FROM THE LIST---//
         private void Button1_Click(object sender, EventArgs e)
         {
             if (radioIncomes.Checked)
@@ -145,6 +150,9 @@ namespace Beadando
             }
         }
 
+
+
+        //---NAVIGATION---//
         private void Button2_Click(object sender, EventArgs e)
         {
             GraphView fn = new GraphView();

@@ -74,7 +74,38 @@ namespace Beadando
 
 
 
-        //---INTERACTIVE CLICK TO DRAW THE GRAPH---//
+        //---INITIAL LIST OF ITEMS---//
+        private void RadioIncomes_CheckedChanged(object sender, EventArgs e)
+        {
+            DirectoryInfo d = new DirectoryInfo(@"C:\temp\Incomes");
+            FileInfo[] Files = d.GetFiles("*.csv");
+            comboBox1.DataSource = Files;
+            comboBox1.DisplayMember = "Name";
+            path = (@"C:\temp\Incomes\");
+        }
+
+        private void RadioExpenses_CheckedChanged(object sender, EventArgs e)
+        {
+            DirectoryInfo d = new DirectoryInfo(@"C:\temp\Expenses");
+            FileInfo[] Files = d.GetFiles("*.csv");
+            comboBox1.DataSource = Files;
+            comboBox1.DisplayMember = "Name";
+            path = (@"C:\temp\Expenses\");
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filename = comboBox1.Text;
+        }
+
+        private void ButtonYearSelect_Click(object sender, EventArgs e)
+        {
+            InteractiveClick();
+        }
+
+
+
+        //---DELETING FROM THE LIST---//
         private void InteractiveClick()
         {
             if (radioIncomes.Checked)
@@ -122,38 +153,6 @@ namespace Beadando
                 series.YValueMembers = "Value";
                 series.Color = color;
             }
-        }
-
-
-
-        //---INTERACTIVE GRAPH---//
-        private void RadioIncomes_CheckedChanged(object sender, EventArgs e)
-        {
-            DirectoryInfo d = new DirectoryInfo(@"C:\temp\Incomes");
-            FileInfo[] Files = d.GetFiles("*.csv");
-            comboBox1.DataSource = Files;
-            comboBox1.DisplayMember = "Name";
-            path = (@"C:\temp\Incomes\");
-        }
-
-        private void RadioExpenses_CheckedChanged(object sender, EventArgs e)
-        {
-            DirectoryInfo d = new DirectoryInfo(@"C:\temp\Expenses");
-            FileInfo[] Files = d.GetFiles("*.csv");
-            comboBox1.DataSource = Files;
-            comboBox1.DisplayMember = "Name";
-            path = (@"C:\temp\Expenses\");
-        }
-
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            filename = comboBox1.Text;
-        }
-
-        private void ButtonYearSelect_Click(object sender, EventArgs e)
-        {
-            InteractiveClick();
-
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -211,6 +210,5 @@ namespace Beadando
                 bmp.Save(@"c:\temp\screenshot.png");
             }
         }
-
     }
 }

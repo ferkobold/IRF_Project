@@ -18,13 +18,6 @@ namespace Beadando.Entities
                 return Month.ToString();
             }
         }
-        public int MonthOrder
-        {
-            get
-            {
-                return (int)Month;
-            }
-        }
         public string ExpenseTypeString
         {
             get

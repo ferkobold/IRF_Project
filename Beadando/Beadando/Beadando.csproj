@@ -52,11 +52,11 @@
     <Compile Include="Entities\Income.cs" />
     <Compile Include="Entities\Incometype.cs" />
     <Compile Include="Entities\Month.cs" />
-    <Compile Include="FinancialStatement.cs">
+    <Compile Include="GraphView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FinancialStatement.Designer.cs">
-      <DependentUpon>FinancialStatement.cs</DependentUpon>
+    <Compile Include="GraphView.Designer.cs">
+      <DependentUpon>GraphView.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeScreen.cs">
       <SubType>Form</SubType>
@@ -78,8 +78,8 @@
     <Compile Include="TestChart.Designer.cs">
       <DependentUpon>TestChart.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FinancialStatement.resx">
-      <DependentUpon>FinancialStatement.cs</DependentUpon>
+    <EmbeddedResource Include="GraphView.resx">
+      <DependentUpon>GraphView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeScreen.resx">
       <DependentUpon>HomeScreen.cs</DependentUpon>

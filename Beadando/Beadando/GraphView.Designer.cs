@@ -1,6 +1,6 @@
 ﻿namespace Beadando
 {
-    partial class FinancialStatement
+    partial class GraphView
     {
         /// <summary>
         /// Required designer variable.
@@ -264,7 +264,7 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // FinancialStatement
+            // GraphView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -286,8 +286,8 @@
             this.Controls.Add(this.buttonLine);
             this.Controls.Add(this.buttonBar);
             this.Controls.Add(this.chart1);
-            this.Name = "FinancialStatement";
-            this.Text = "Financial Statement";
+            this.Name = "GraphView";
+            this.Text = "Graph View";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

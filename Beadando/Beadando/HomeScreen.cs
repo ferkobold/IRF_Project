@@ -19,7 +19,7 @@ namespace Beadando
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            FinancialStatement fs = new FinancialStatement();
+            GraphView fs = new GraphView();
             fs.ShowDialog();
         }
 

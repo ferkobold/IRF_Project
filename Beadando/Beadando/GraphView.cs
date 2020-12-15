@@ -13,7 +13,7 @@ using Beadando.Entities;
 
 namespace Beadando
 {
-    public partial class FinancialStatement : Form
+    public partial class GraphView : Form
     {
         List<Expense> Expenses = new List<Expense>();
         List<Income> Incomes = new List<Income>();
@@ -23,7 +23,7 @@ namespace Beadando
         Color color = Color.Red;
 
 
-        public FinancialStatement()
+        public GraphView()
         {
             InitializeComponent();
             Expenses = GetExpenses(path + filename);

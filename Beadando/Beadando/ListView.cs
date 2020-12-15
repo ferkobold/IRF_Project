@@ -147,7 +147,7 @@ namespace Beadando
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            FinancialStatement fn = new FinancialStatement();
+            GraphView fn = new GraphView();
             fn.ShowDialog();
             this.Close();
         }

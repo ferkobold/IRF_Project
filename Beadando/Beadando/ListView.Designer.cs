@@ -226,7 +226,7 @@
             this.Controls.Add(this.buttonYearSelect);
             this.Controls.Add(this.dataGridView1);
             this.Name = "ListView";
-            this.Text = "ListView";
+            this.Text = "List View";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

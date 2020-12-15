@@ -210,8 +210,9 @@ namespace Beadando
         //---NAVIGATION---//
         private void ButtonList_Click(object sender, EventArgs e)
         {
-            ListView listView = new ListView();
-            listView.ShowDialog();
+            this.Hide();
+            ListView lv = new ListView();
+            lv.Show();
         }
     }
 }

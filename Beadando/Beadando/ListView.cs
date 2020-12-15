@@ -155,9 +155,9 @@ namespace Beadando
         //---NAVIGATION---//
         private void Button2_Click(object sender, EventArgs e)
         {
-            GraphView fn = new GraphView();
-            fn.ShowDialog();
-            this.Close();
+            this.Hide();
+            GraphView gv = new GraphView();
+            gv.Show();           
         }
     }
 }

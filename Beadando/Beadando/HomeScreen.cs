@@ -19,12 +19,14 @@ namespace Beadando
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            GraphView fs = new GraphView();
-            fs.ShowDialog();
+            this.Hide();
+            GraphView gv = new GraphView();
+            gv.ShowDialog();
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
             ListView lv = new ListView();
             lv.ShowDialog();
         }

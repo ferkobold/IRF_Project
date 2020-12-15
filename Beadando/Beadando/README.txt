@@ -1,7 +1,9 @@
 Üdvözlök mindenkit a Beam Statements pénzügyi kimutatáskezelõ alkalmazásban. A program fõ célja, funkciója, hogy grafikusan, illetve listázva megmutassa az adott személynek / vállalatnak,
-hogy az adott évben mennyit költött, mennyi pénzt keresett. A tranzakciókat bárhogyan el lehet nevezni, lényeg, hogy a kiadásokat a C:\temp\Incomes vagy C:\temp\Expenses mappába rakjuk,
-hiszen innen tudja kiolvasni a szoftver az adatokat. A csv-knek szigorú formátumot kell követni: az "A" oszlopba kerül egy egész szám 1-12 között, ez lesz az adott hónap indexe, amikor
-a tranzakció megtörtént. A második, "B" oszlopba kerülnek a bevétel, vagy kiadás típusai.
+hogy az adott évben mennyit költött, mennyi pénzt keresett. A tranzakciókat tartalmazó csv fájlt bárhogyan el lehet nevezni, lényeg, hogy a bevételeket a C:\temp\Incomes,
+a kiadásokat C:\temp\Expenses mappába rakjuk, hiszen innen tudja kiolvasni a szoftver az adatokat. 
+A csv-knek szigorú formátumot kell követni:
+az "A" oszlopba kerül egy egész szám 1-12 között, ez lesz az adott hónap indexe, amikora tranzakció megtörtént. 
+A második, "B" oszlopba kerülnek a bevétel, vagy kiadás típusai.
 Ha bevételi csv-t csinálunk: 
 1- Értékesítés
 2- Pénzügyi

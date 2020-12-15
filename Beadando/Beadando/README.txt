@@ -12,7 +12,7 @@ Ha kiadási csv-t csinálunk:
 3 - Adminisztratív
 4 - Értékesítés
 5 - Egyéb
-A harmadik, azaz C oszlopba pedig az adott tranzakció értéke kerül.
+A harmadik, azaz "C" oszlopba pedig az adott tranzakció értéke kerül.
 Miután kitöltöttük a csv-t és elmentettük a megfelelõ helyre el is kezdhetjük használni az alkalmazást.
 Az alkalmazás 2 fõ formból és egy kezdõlapból áll. 
 A GraphView formban grafikus módon láthatjuk az adott hónapok tranzakcióit összegezve. Ha szeretnénk kitörölhetünk olyan hónapokat, amiket nem szeretnénk látni a checkedBoxList segítségével, 

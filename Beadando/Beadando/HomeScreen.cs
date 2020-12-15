@@ -17,6 +17,9 @@ namespace Beadando
             InitializeComponent();
         }
 
+
+
+        //---NAVIGATION---//
         private void Button1_Click(object sender, EventArgs e)
         {
             this.Hide();

@@ -15,13 +15,12 @@ namespace Beadando
 {
     public partial class GraphView : Form
     {
-        List<Expense> Expenses = new List<Expense>();
-        List<Income> Incomes = new List<Income>();
-        public string path = (@"C:\temp\Incomes\");
-        public string filename = "2019.csv";
-        SeriesChartType chartType = SeriesChartType.Line;
-        Color color = Color.Red;
-
+        List<Expense> Expenses = new List<Expense>();       //Kiadás lista létrehozása
+        List<Income> Incomes = new List<Income>();          //Bevétel lista létrehozása
+        public string path = (@"C:\temp\Incomes\");         //Fájl kiolvasása, lokáció
+        public string filename = "2019.csv";                //Fájl kiolvasása, fájlnév
+        SeriesChartType chartType = SeriesChartType.Line;   //Grafikon személyreszabása, típus változó
+        Color color = Color.Red;                            //Grafikon személyreszabása, szín változó
 
         public GraphView()
         {
@@ -75,89 +74,7 @@ namespace Beadando
 
 
 
-
-        //---UTILITIES ON LEFT SIDE---//
-        private void ButtonSave_Click(object sender, EventArgs e)
-        {
-            var frm = Form.ActiveForm;
-            using (var bmp = new Bitmap(frm.Width, frm.Height))
-            {
-                frm.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
-                bmp.Save(@"c:\temp\screenshot.png");
-            }
-        }
-
-
-
-        //---CUSTOMIZATION BUTTONS---//
-        private void ButtonBar_Click(object sender, EventArgs e)
-        {
-            chartType = SeriesChartType.Bar;
-            InteractiveClick();
-        }
-
-        private void ButtonLine_Click(object sender, EventArgs e)
-        {
-            chartType = SeriesChartType.Line;
-            InteractiveClick();
-        }
-
-        private void ButtonPie_Click(object sender, EventArgs e)
-        {
-            chartType = SeriesChartType.Doughnut;
-            InteractiveClick();
-
-        }
-
-        private void ButtonColor_Click(object sender, EventArgs e)
-        {
-            var colorPicker = new ColorDialog();
-            if (colorPicker.ShowDialog() != DialogResult.OK)
-            {
-                return;
-            }
-            color = colorPicker.Color;
-            InteractiveClick();
-        }
-
-        private void ButtonList_Click(object sender, EventArgs e)
-        {
-            ListView listView = new ListView();
-            listView.ShowDialog();
-        }
-
-
-
-        //---INTERACTIVE GRAPH---//
-        private void RadioIncomes_CheckedChanged(object sender, EventArgs e)
-        {
-            DirectoryInfo d = new DirectoryInfo(@"C:\temp\Incomes");
-            FileInfo[] Files = d.GetFiles("*.csv");
-            comboBox1.DataSource = Files;
-            comboBox1.DisplayMember = "Name";
-            path = (@"C:\temp\Incomes\");
-        }
-
-        private void RadioExpenses_CheckedChanged(object sender, EventArgs e)
-        {
-            DirectoryInfo d = new DirectoryInfo(@"C:\temp\Expenses");
-            FileInfo[] Files = d.GetFiles("*.csv");
-            comboBox1.DataSource = Files;
-            comboBox1.DisplayMember = "Name";
-            path = (@"C:\temp\Expenses\");
-        }
-
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            filename = comboBox1.Text;
-        }
-
-        private void ButtonYearSelect_Click(object sender, EventArgs e)
-        {
-            InteractiveClick();
-
-        }
-
+        //---INTERACTIVE CLICK TO DRAW THE GRAPH---//
         private void InteractiveClick()
         {
             if (radioIncomes.Checked)
@@ -207,9 +124,93 @@ namespace Beadando
             }
         }
 
+
+
+        //---INTERACTIVE GRAPH---//
+        private void RadioIncomes_CheckedChanged(object sender, EventArgs e)
+        {
+            DirectoryInfo d = new DirectoryInfo(@"C:\temp\Incomes");
+            FileInfo[] Files = d.GetFiles("*.csv");
+            comboBox1.DataSource = Files;
+            comboBox1.DisplayMember = "Name";
+            path = (@"C:\temp\Incomes\");
+        }
+
+        private void RadioExpenses_CheckedChanged(object sender, EventArgs e)
+        {
+            DirectoryInfo d = new DirectoryInfo(@"C:\temp\Expenses");
+            FileInfo[] Files = d.GetFiles("*.csv");
+            comboBox1.DataSource = Files;
+            comboBox1.DisplayMember = "Name";
+            path = (@"C:\temp\Expenses\");
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filename = comboBox1.Text;
+        }
+
+        private void ButtonYearSelect_Click(object sender, EventArgs e)
+        {
+            InteractiveClick();
+
+        }
+
         private void Button2_Click(object sender, EventArgs e)
         {
             InteractiveClick();
         }
+
+
+
+        //---CUSTOMIZATION BUTTONS---//
+        private void ButtonBar_Click(object sender, EventArgs e)
+        {
+            chartType = SeriesChartType.Bar;
+            InteractiveClick();
+        }
+
+        private void ButtonLine_Click(object sender, EventArgs e)
+        {
+            chartType = SeriesChartType.Line;
+            InteractiveClick();
+        }
+
+        private void ButtonPie_Click(object sender, EventArgs e)
+        {
+            chartType = SeriesChartType.Doughnut;
+            InteractiveClick();
+        }
+
+        private void ButtonColor_Click(object sender, EventArgs e)
+        {
+            var colorPicker = new ColorDialog();
+            if (colorPicker.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+            color = colorPicker.Color;
+            InteractiveClick();
+        }
+
+        private void ButtonList_Click(object sender, EventArgs e)
+        {
+            ListView listView = new ListView();
+            listView.ShowDialog();
+        }
+
+
+
+        //---UTILITIES ON LEFT SIDE---//
+        private void ButtonSave_Click(object sender, EventArgs e)
+        {
+            var frm = Form.ActiveForm;
+            using (var bmp = new Bitmap(frm.Width, frm.Height))
+            {
+                frm.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
+                bmp.Save(@"c:\temp\screenshot.png");
+            }
+        }
+
     }
 }
